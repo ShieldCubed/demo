@@ -288,13 +288,15 @@ export function ControlPanel() {
 
   const handleExplode = useCallback(() => {
     if (!store.explode) {
-      // Turning explode on ensures heatsink is visible
+      // Turn ON: ensure heatsink visible, then apply explode preset
+      // (applyPreset("explode") already sets explode=true)
       store.set("heatsink", true);
       store.applyPreset("explode");
     } else {
+      // Turn OFF: explicitly set explode=false, then return to hero preset
+      store.set("explode", false);
       store.applyPreset("hero");
     }
-    store.toggle("explode");
   }, [store]);
 
   return (
@@ -455,9 +457,9 @@ export function useKeyboardShortcuts() {
             store.set("heatsink", true);
             store.applyPreset("explode");
           } else {
+            store.set("explode", false);
             store.applyPreset("hero");
           }
-          store.toggle("explode");
           break;
         case "q":
         case "Q":
