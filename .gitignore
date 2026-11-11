@@ -63,3 +63,13 @@ server.log
 
 # QA screenshots
 /download/chip-render-*.png
+# Sandbox artifacts — don't ship to GitHub
+/upload/
+/download/
+/.zscripts/
+/Caddyfile
+/examples/
+/mini-services/
+/tests/
+/db/custom.db
+
