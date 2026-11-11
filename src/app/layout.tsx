@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Aumnium Technology Pvt Ltd" }],
   icons: {
-    icon: "/logo.svg",
+    icon: "logo.svg",
   },
 };
 
